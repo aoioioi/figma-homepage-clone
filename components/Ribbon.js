@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { XIcon } from '@heroicons/react/solid'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 
 function Ribbon() {
   const [isClosed, setIsClosed] = useState(false)
@@ -12,7 +12,7 @@ function Ribbon() {
         <a href="/" className="text-blue-600 hover:underline">Read more.</a>
       </p>
       <button className="px-3" onClick={() => setIsClosed(true)}>
-        <XIcon className="h-5 w-5 absolute top-4 right-4 md:right-11" />
+        <XMarkIcon className="h-5 w-5 absolute top-3.5 right-4 md:right-11" />
       </button>
     </div>
   )

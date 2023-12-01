@@ -1,4 +1,4 @@
-import { ArrowCircleRightIcon } from '@heroicons/react/outline'
+import { ArrowRightCircleIcon } from '@heroicons/react/24/outline'
 
 function CompaniesSection() {
   return (
@@ -13,7 +13,7 @@ function CompaniesSection() {
         <i className="bi bi-pinterest text-4xl hidden xl:block"></i>
         <i className="bi bi-linkedin text-4xl hidden xl:block"></i>
         <button>
-          <ArrowCircleRightIcon className="h-9 w-9 inline" />
+          <ArrowRightCircleIcon className="h-9 w-9 inline" />
         </button>
       </div>
     </div>

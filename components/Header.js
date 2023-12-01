@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { MenuIcon } from '@heroicons/react/outline'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 
 function Header() {
@@ -46,7 +46,7 @@ function Header() {
       <div className="flex items-center mt-1 lg:hidden">
         <button className=" text-white bg-black px-6 py-3 rounded-xl mx-5 font-polite hover:-translate-y-0.5 transition duration-150">Sign Up</button>
         <button>
-          <MenuIcon className="h-8 w-8" />
+          <Bars3Icon className="h-8 w-8" />
         </button>
       </div>
       <motion.button
