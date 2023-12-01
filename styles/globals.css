@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Sen&display=swap");
+
+@layer base {
+  @font-face {
+    font-family: "PoliteType";
+    /* 
+      Can add extra formats e.g. otf and separate by comma
+      url('...otf') format('otf')
+      ttf not supported convert to woff via:
+      https://convertio.co/ttf-woff/
+    */
+    src: url("/fonts/PoliteType-Regular.woff") format("woff");
+  }
+}
