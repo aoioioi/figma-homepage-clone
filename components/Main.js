@@ -30,6 +30,9 @@ function Main() {
       }
     };
 
+    // Initialize on page refreshes
+    handleScroll();
+
     // const handleInnerResize = () => { console.log("Inner", window.innerWidth); };
     // const handleOuterResize = () => { console.log("Outer", window.outerWidth); };
 
