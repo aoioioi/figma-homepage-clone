@@ -1,12 +1,68 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { useEffect, useState } from "react";
 
 function Main() {
+  const [activeSection, setActiveSection] = useState("brainstorm");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const { scrollY, innerWidth } = window;
+
+      // Handle breakpoints
+      if (innerWidth < 800) {
+        if (scrollY < 1350) {
+          setActiveSection("brainstorm");
+        } else if (scrollY > 1350 && scrollY < 1950) {
+          setActiveSection("design");
+        } else if (scrollY > 1950) {
+          setActiveSection("build");
+        }
+      }
+
+      if (innerWidth > 800) {
+        if (scrollY < 1800) {
+          setActiveSection("brainstorm");
+        } else if (scrollY > 1800 && scrollY < 2600) {
+          setActiveSection("design");
+        } else if (scrollY > 2600) {
+          setActiveSection("build");
+        }
+      }
+    };
+
+    // const handleInnerResize = () => { console.log("Inner", window.innerWidth); };
+    // const handleOuterResize = () => { console.log("Outer", window.outerWidth); };
+
+    document.addEventListener('scroll', handleScroll);
+    // window.addEventListener('resize', handleOuterResize);
+    // window.addEventListener('resize', handleInnerResize);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+      // window.removeEventListener('resize', handleOuterResize);
+      // window.removeEventListener('resize', handleInnerResize);
+
+    };
+  }, []);
+
   return (
     <div className="px-4 md:px-11 py-16 pb-32 bg-[#fafafa]">
       <div className="flex space-x-4 sticky top-8">
-        <button className="text-sm font-semibold px-5 py-2 border border-transparent bg-blue-400 text-white rounded-3xl font-custom">Brainstorm</button>
-        <button className="text-sm font-semibold px-5 py-2 border border-gray-400 text-gray-400 bg-white rounded-3xl font-custom">Design</button>
-        <button className="text-sm font-semibold px-5 py-2 border border-gray-400 text-gray-400 bg-white rounded-3xl font-custom">Build</button>
+        <button
+          className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "brainstorm" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+        >
+          Brainstorm
+        </button>
+        <button
+          className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "design" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+        >
+          Design
+        </button>
+        <button
+          className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "build" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+        >
+          Build
+        </button>
       </div>
       <div className="flex flex-col xl:flex-row justify-evenly items-center">
         <div className="">
