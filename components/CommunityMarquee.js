@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 function CommunityMarquee() {
   return (
     <div className='flex'>
@@ -34,7 +32,7 @@ function CommunityMarquee() {
         Community 😸
       </h2>
     </div>
-  )
+  );
 }
 
 export default CommunityMarquee;

@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div className="font-sen mx-4">
-      <div className="flex justify-between items-center md:hidden mx-4">
+      <div className="flex justify-between items-center md:hidden mr-4">
         <a href="/" className="text-4xl mr-4 font-alata">Figma</a>
         <div className="space-x-6">
           <a href="/" className="hover:underline">
@@ -18,9 +18,10 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 max-w-screen-xl mx-auto pt-[4rem] pb-[8rem] space-x-4 md:space-x-8 gap-y-12 text-sm">
-        <div className="space-y-5 ml-4 hidden md:block">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 max-w-(--breakpoint-xl) mx-auto pt-[4rem] pb-[8rem] space-x-4 md:space-x-8 gap-y-12 text-sm">
+        <div className="space-y-4 ml-4 hidden md:block">
           <a href="/" className="text-4xl font-alata">Figma</a>
+          <div />
           <a href="/" className="block hover:underline">
             <i className="bi bi-twitter mr-3"></i>
             Twitter
@@ -87,7 +88,7 @@ function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

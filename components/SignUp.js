@@ -6,10 +6,10 @@ function SignUp() {
         <i className="bi bi-google mr-2"></i>
         Continue with Google</button>
       <p className="text-center text-gray-500">or</p>
-      <div className="flex flex-grow justify-center my-2">
+      <div className="flex grow justify-center my-2">
         <form action="" className="max-w-[20rem]">
-          <input type="text" placeholder="Email" className="w-full border-2 border-gray-900 px-4 py-3 block my-4 rounded-md focus:outline-none focus:border-blue-600" />
-          <input type="text" placeholder="Password" className="w-full border-2 border-gray-900 px-4 py-3 rounded-md focus:outline-none focus:border-blue-600" />
+          <input type="text" placeholder="Email" className="w-full border-2 border-gray-900 px-4 py-3 block my-4 rounded-md focus:outline-hidden focus:border-blue-600" />
+          <input type="text" placeholder="Password" className="w-full border-2 border-gray-900 px-4 py-3 rounded-md focus:outline-hidden focus:border-blue-600" />
           <button className="w-full bg-black text-white border-2 border-gray-900 rounded-lg px-12 py-3 my-6 font-polite hover:-translate-y-0.5 transition duration-150">Create account</button>
         </form>
       </div>

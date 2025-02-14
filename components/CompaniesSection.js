@@ -1,9 +1,9 @@
-import { ArrowRightCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 
 function CompaniesSection() {
   return (
     <div className="flex items-center py-10 border-2 border-gray-900 rounded-2xl my-14 mx-4 sm:mx-8 lg:mx-36 2xl:mx-72 px-10">
-      <p className="sm:max-w-sm flex-grow mr-4">
+      <p className="sm:max-w-sm grow mr-4">
         Join other industry-leading organizations pushing boundaries and solving problems in Figma
       </p>
       <div className="space-x-20 md:ml-12 whitespace-nowrap hidden sm:flex items-center sm:mt-0">
@@ -17,7 +17,7 @@ function CompaniesSection() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default CompaniesSection
+export default CompaniesSection;

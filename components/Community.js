@@ -78,7 +78,7 @@ function Community() {
           <h3 className="text-4xl my-4 font-bold text-center">Join the community</h3>
           <p className="text-xl leading-8 text-center max-w-2xl flex mx-auto">Learn from others, share your work, and extend your tool set with a diverse group of designers, plugin creators, researchers, illustrators, content writers, and many more from around the world.</p>
         </div>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-(--breakpoint-xl) mx-auto">
           <p className="text-sm font-semibold text-yellow-300 my-1 mx-3">BUZZWORTHY</p>
           <p className="text-xl font-bold mx-3">Excellent files by and for our community</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6  gap-y-4 lg:gap-y-0 mt-4 mb-20 mx-3">

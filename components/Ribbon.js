@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 function Ribbon() {
-  const [isClosed, setIsClosed] = useState(false)
+  const [isClosed, setIsClosed] = useState(false);
 
   return (
     <div className={`bg-[#c7b9ff] py-3 flex justify-center items-center relative font-polite ${isClosed && 'hidden'}`}>
@@ -15,7 +15,7 @@ function Ribbon() {
         <XMarkIcon className="h-5 w-5 absolute top-3.5 right-4 md:right-11" />
       </button>
     </div>
-  )
+  );
 }
 
-export default Ribbon
+export default Ribbon;
