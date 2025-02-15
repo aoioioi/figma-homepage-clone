@@ -1,7 +1,11 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Main() {
+  const brainstormRef = useRef();
+  const designRef = useRef();
+  const buildRef = useRef();
+
   const [activeSection, setActiveSection] = useState("brainstorm");
 
   useEffect(() => {
@@ -9,22 +13,22 @@ function Main() {
       const { scrollY, innerWidth } = window;
 
       // Handle breakpoints
-      if (innerWidth < 800) {
-        if (scrollY < 1350) {
+      if (innerWidth <= 800) {
+        if (scrollY <= 1250) {
           setActiveSection("brainstorm");
-        } else if (scrollY > 1350 && scrollY < 1950) {
+        } else if (scrollY > 1250 && scrollY <= 1850) {
           setActiveSection("design");
-        } else if (scrollY > 1950) {
+        } else if (scrollY > 1850) {
           setActiveSection("build");
         }
       }
 
       if (innerWidth > 800) {
-        if (scrollY < 1800) {
+        if (scrollY <= 1500) {
           setActiveSection("brainstorm");
-        } else if (scrollY > 1800 && scrollY < 2600) {
+        } else if (scrollY > 1500 && scrollY <= 2300) {
           setActiveSection("design");
-        } else if (scrollY > 2600) {
+        } else if (scrollY > 2300) {
           setActiveSection("build");
         }
       }
@@ -48,26 +52,44 @@ function Main() {
     };
   }, []);
 
+  const handleScrollIntoView = (element) => {
+    const { ref, name } = element;
+
+    if (ref.current) {
+      // setActiveSection(name);
+      ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+  };
+
   return (
     <div className="px-4 md:px-11 py-16 pb-32 bg-[#fafafa]">
       <div className="flex space-x-4 sticky top-8">
         <button
           className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "brainstorm" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+          onClick={() => handleScrollIntoView({ ref: brainstormRef, name: "brainstorm" })}
         >
           Brainstorm
         </button>
         <button
           className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "design" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+          onClick={() => handleScrollIntoView({ ref: designRef, name: "design" })}
         >
           Design
         </button>
         <button
           className={`text-sm font-semibold px-5 py-2 border rounded-3xl font-custom ${activeSection === "build" ? "bg-blue-400 text-white border-transparent " : "bg-white text-gray-400 border-gray-400"}`}
+          onClick={() => handleScrollIntoView({ ref: buildRef, name: "build" })}
         >
           Build
         </button>
       </div>
-      <div className="flex flex-col xl:flex-row justify-evenly items-center">
+      <div
+        ref={brainstormRef}
+        className="flex flex-col xl:flex-row justify-evenly items-center"
+      >
         <div className="">
           <div className="max-w-md">
             <h2 className="text-4xl my-6 font-polite">Explore ideas together</h2>
@@ -80,7 +102,10 @@ function Main() {
         </div>
         <img src="/images/brainstorm.png" alt="" className="" />
       </div>
-      <div className="flex flex-col xl:flex-row justify-evenly items-center">
+      <div
+        ref={designRef}
+        className="flex flex-col xl:flex-row justify-evenly items-center"
+      >
         <div className="">
           <div className="max-w-md">
             <h2 className="text-4xl my-6 font-polite">Bring those ideas to life</h2>
@@ -89,7 +114,10 @@ function Main() {
         </div>
         <img src="/images/design.png" alt="" className="" />
       </div>
-      <div className="flex flex-col xl:flex-row justify-evenly items-center">
+      <div
+        ref={buildRef}
+        className="flex flex-col xl:flex-row justify-evenly items-center"
+      >
         <div className="">
           <div className="max-w-md">
             <h2 className="text-4xl my-6 font-polite">Powerful design systems</h2>
@@ -100,7 +128,7 @@ function Main() {
             </a>
           </div>
         </div>
-        <img src="/images/build.png" alt="" className="px-20" />
+        <img src="/images/build.png" alt="" className="pt-6 sm:px-20" />
       </div>
     </div>
   );
